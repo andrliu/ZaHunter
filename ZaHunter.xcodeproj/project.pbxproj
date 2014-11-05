@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		494460411A0AE30F005E0766 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 494460401A0AE30F005E0766 /* main.m */; };
 		494460441A0AE30F005E0766 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 494460431A0AE30F005E0766 /* AppDelegate.m */; };
-		494460471A0AE30F005E0766 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 494460461A0AE30F005E0766 /* ViewController.m */; };
+		494460471A0AE30F005E0766 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 494460461A0AE30F005E0766 /* RootViewController.m */; };
 		4944604A1A0AE30F005E0766 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494460481A0AE30F005E0766 /* Main.storyboard */; };
 		4944604C1A0AE30F005E0766 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4944604B1A0AE30F005E0766 /* Images.xcassets */; };
 		4944604F1A0AE30F005E0766 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4944604D1A0AE30F005E0766 /* LaunchScreen.xib */; };
 		4944605B1A0AE30F005E0766 /* ZaHunterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4944605A1A0AE30F005E0766 /* ZaHunterTests.m */; };
+		49B5B7D11A0AE6DC003E8538 /* Pizzeria.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B5B7D01A0AE6DC003E8538 /* Pizzeria.m */; };
+		49B5B7D41A0AE9AC003E8538 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B5B7D31A0AE9AC003E8538 /* ListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +34,18 @@
 		494460401A0AE30F005E0766 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		494460421A0AE30F005E0766 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		494460431A0AE30F005E0766 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		494460451A0AE30F005E0766 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		494460461A0AE30F005E0766 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		494460451A0AE30F005E0766 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		494460461A0AE30F005E0766 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		494460491A0AE30F005E0766 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4944604B1A0AE30F005E0766 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4944604E1A0AE30F005E0766 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		494460541A0AE30F005E0766 /* ZaHunterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZaHunterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		494460591A0AE30F005E0766 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4944605A1A0AE30F005E0766 /* ZaHunterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZaHunterTests.m; sourceTree = "<group>"; };
+		49B5B7CF1A0AE6DC003E8538 /* Pizzeria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pizzeria.h; sourceTree = "<group>"; };
+		49B5B7D01A0AE6DC003E8538 /* Pizzeria.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pizzeria.m; sourceTree = "<group>"; };
+		49B5B7D21A0AE9AB003E8538 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		49B5B7D31A0AE9AC003E8538 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,11 +89,14 @@
 			children = (
 				494460421A0AE30F005E0766 /* AppDelegate.h */,
 				494460431A0AE30F005E0766 /* AppDelegate.m */,
-				494460451A0AE30F005E0766 /* ViewController.h */,
-				494460461A0AE30F005E0766 /* ViewController.m */,
+				494460451A0AE30F005E0766 /* RootViewController.h */,
+				494460461A0AE30F005E0766 /* RootViewController.m */,
+				49B5B7D21A0AE9AB003E8538 /* ListViewController.h */,
+				49B5B7D31A0AE9AC003E8538 /* ListViewController.m */,
 				494460481A0AE30F005E0766 /* Main.storyboard */,
 				4944604B1A0AE30F005E0766 /* Images.xcassets */,
 				4944604D1A0AE30F005E0766 /* LaunchScreen.xib */,
+				49B5B7CE1A0AE6A2003E8538 /* Model */,
 				4944603E1A0AE30F005E0766 /* Supporting Files */,
 			);
 			path = ZaHunter;
@@ -117,6 +126,15 @@
 				494460591A0AE30F005E0766 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49B5B7CE1A0AE6A2003E8538 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				49B5B7CF1A0AE6DC003E8538 /* Pizzeria.h */,
+				49B5B7D01A0AE6DC003E8538 /* Pizzeria.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +237,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				494460471A0AE30F005E0766 /* ViewController.m in Sources */,
+				49B5B7D41A0AE9AC003E8538 /* ListViewController.m in Sources */,
+				494460471A0AE30F005E0766 /* RootViewController.m in Sources */,
 				494460441A0AE30F005E0766 /* AppDelegate.m in Sources */,
 				494460411A0AE30F005E0766 /* main.m in Sources */,
+				49B5B7D11A0AE6DC003E8538 /* Pizzeria.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +432,7 @@
 				494460601A0AE30F005E0766 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		494460611A0AE30F005E0766 /* Build configuration list for PBXNativeTarget "ZaHunterTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +441,7 @@
 				494460631A0AE30F005E0766 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
