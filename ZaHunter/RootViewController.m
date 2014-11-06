@@ -7,6 +7,8 @@
 //
 
 #import "RootViewController.h"
+@import MapKit;
+@import CoreLocation;
 
 @interface RootViewController ()
 

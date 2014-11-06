@@ -16,6 +16,8 @@
 		4944605B1A0AE30F005E0766 /* ZaHunterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4944605A1A0AE30F005E0766 /* ZaHunterTests.m */; };
 		49B5B7D11A0AE6DC003E8538 /* Pizzeria.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B5B7D01A0AE6DC003E8538 /* Pizzeria.m */; };
 		49B5B7D41A0AE9AC003E8538 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B5B7D31A0AE9AC003E8538 /* ListViewController.m */; };
+		49B5B7D61A0AEB7C003E8538 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B5B7D51A0AEB7C003E8538 /* MapKit.framework */; };
+		49B5B7D81A0AEB81003E8538 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B5B7D71A0AEB81003E8538 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		49B5B7D01A0AE6DC003E8538 /* Pizzeria.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pizzeria.m; sourceTree = "<group>"; };
 		49B5B7D21A0AE9AB003E8538 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		49B5B7D31A0AE9AC003E8538 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		49B5B7D51A0AEB7C003E8538 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		49B5B7D71A0AEB81003E8538 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49B5B7D81A0AEB81003E8538 /* CloudKit.framework in Frameworks */,
+				49B5B7D61A0AEB7C003E8538 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +75,8 @@
 		494460321A0AE30F005E0766 = {
 			isa = PBXGroup;
 			children = (
+				49B5B7D71A0AEB81003E8538 /* CloudKit.framework */,
+				49B5B7D51A0AEB7C003E8538 /* MapKit.framework */,
 				4944603D1A0AE30F005E0766 /* ZaHunter */,
 				494460571A0AE30F005E0766 /* ZaHunterTests */,
 				4944603C1A0AE30F005E0766 /* Products */,
