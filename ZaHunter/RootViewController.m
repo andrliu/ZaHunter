@@ -20,9 +20,5 @@
 {
     [super viewDidLoad];
 }
-- (IBAction)pizzeriaOnButtonPressed:(UIButton *)sender
-{
-
-}
 
 @end

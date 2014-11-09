@@ -14,10 +14,11 @@
 		4944604C1A0AE30F005E0766 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4944604B1A0AE30F005E0766 /* Images.xcassets */; };
 		4944604F1A0AE30F005E0766 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4944604D1A0AE30F005E0766 /* LaunchScreen.xib */; };
 		4944605B1A0AE30F005E0766 /* ZaHunterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4944605A1A0AE30F005E0766 /* ZaHunterTests.m */; };
-		49B5B7D11A0AE6DC003E8538 /* Pizzeria.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B5B7D01A0AE6DC003E8538 /* Pizzeria.m */; };
 		49B5B7D41A0AE9AC003E8538 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B5B7D31A0AE9AC003E8538 /* ListViewController.m */; };
 		49B5B7D61A0AEB7C003E8538 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B5B7D51A0AEB7C003E8538 /* MapKit.framework */; };
 		49B5B7D81A0AEB81003E8538 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B5B7D71A0AEB81003E8538 /* CloudKit.framework */; };
+		49B5B8101A0C3830003E8538 /* ALMapItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B5B80F1A0C3830003E8538 /* ALMapItem.m */; };
+		49EA76501A0ED3300081971F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EA764F1A0ED3300081971F /* MapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,12 +45,14 @@
 		494460541A0AE30F005E0766 /* ZaHunterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZaHunterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		494460591A0AE30F005E0766 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4944605A1A0AE30F005E0766 /* ZaHunterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZaHunterTests.m; sourceTree = "<group>"; };
-		49B5B7CF1A0AE6DC003E8538 /* Pizzeria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pizzeria.h; sourceTree = "<group>"; };
-		49B5B7D01A0AE6DC003E8538 /* Pizzeria.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pizzeria.m; sourceTree = "<group>"; };
 		49B5B7D21A0AE9AB003E8538 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		49B5B7D31A0AE9AC003E8538 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		49B5B7D51A0AEB7C003E8538 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		49B5B7D71A0AEB81003E8538 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		49B5B80E1A0C3830003E8538 /* ALMapItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALMapItem.h; sourceTree = "<group>"; };
+		49B5B80F1A0C3830003E8538 /* ALMapItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALMapItem.m; sourceTree = "<group>"; };
+		49EA764E1A0ED3300081971F /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		49EA764F1A0ED3300081971F /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +104,12 @@
 				494460461A0AE30F005E0766 /* RootViewController.m */,
 				49B5B7D21A0AE9AB003E8538 /* ListViewController.h */,
 				49B5B7D31A0AE9AC003E8538 /* ListViewController.m */,
+				49EA764E1A0ED3300081971F /* MapViewController.h */,
+				49EA764F1A0ED3300081971F /* MapViewController.m */,
 				494460481A0AE30F005E0766 /* Main.storyboard */,
+				49B5B7CE1A0AE6A2003E8538 /* Model */,
 				4944604B1A0AE30F005E0766 /* Images.xcassets */,
 				4944604D1A0AE30F005E0766 /* LaunchScreen.xib */,
-				49B5B7CE1A0AE6A2003E8538 /* Model */,
 				4944603E1A0AE30F005E0766 /* Supporting Files */,
 			);
 			path = ZaHunter;
@@ -139,8 +144,8 @@
 		49B5B7CE1A0AE6A2003E8538 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				49B5B7CF1A0AE6DC003E8538 /* Pizzeria.h */,
-				49B5B7D01A0AE6DC003E8538 /* Pizzeria.m */,
+				49B5B80E1A0C3830003E8538 /* ALMapItem.h */,
+				49B5B80F1A0C3830003E8538 /* ALMapItem.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -247,9 +252,10 @@
 			files = (
 				49B5B7D41A0AE9AC003E8538 /* ListViewController.m in Sources */,
 				494460471A0AE30F005E0766 /* RootViewController.m in Sources */,
+				49B5B8101A0C3830003E8538 /* ALMapItem.m in Sources */,
+				49EA76501A0ED3300081971F /* MapViewController.m in Sources */,
 				494460441A0AE30F005E0766 /* AppDelegate.m in Sources */,
 				494460411A0AE30F005E0766 /* main.m in Sources */,
-				49B5B7D11A0AE6DC003E8538 /* Pizzeria.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
