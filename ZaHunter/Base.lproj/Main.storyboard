@@ -100,25 +100,34 @@
                                     <action selector="directionOption:" destination="gsU-Di-Bvc" eventType="valueChanged" id="7II-NN-j7V"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrb-gP-qoE">
+                                <rect key="frame" x="254" y="69" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="w6x-HD-Cu0"/>
+                                    <constraint firstAttribute="height" constant="30" id="yMZ-OT-gV1"/>
+                                </constraints>
+                                <state key="normal" title="Edit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="editOnButtonPressed:" destination="gsU-Di-Bvc" eventType="touchUpInside" id="Tjx-XI-8Qh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="nrb-gP-qoE" firstAttribute="top" secondItem="aNc-vs-j61" secondAttribute="bottom" constant="5" id="GOX-lw-w0M"/>
                             <constraint firstAttribute="centerX" secondItem="Mon-oJ-CAZ" secondAttribute="centerX" id="Hbw-6R-Ry6"/>
                             <constraint firstItem="hnE-8m-zdM" firstAttribute="top" secondItem="Mon-oJ-CAZ" secondAttribute="bottom" constant="2" id="IA9-yL-Ujb"/>
                             <constraint firstItem="hnE-8m-zdM" firstAttribute="leading" secondItem="D5W-fc-6bf" secondAttribute="leadingMargin" constant="-16" id="U6d-2a-yIJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hnE-8m-zdM" secondAttribute="trailing" constant="-16" id="Yee-Te-kEH"/>
                             <constraint firstItem="Mon-oJ-CAZ" firstAttribute="top" secondItem="aNc-vs-j61" secondAttribute="bottom" constant="5" id="aLE-BY-lTM"/>
                             <constraint firstItem="0is-Ks-4wM" firstAttribute="top" secondItem="hnE-8m-zdM" secondAttribute="bottom" id="anL-EG-CAd"/>
+                            <constraint firstItem="nrb-gP-qoE" firstAttribute="trailing" secondItem="D5W-fc-6bf" secondAttribute="trailingMargin" id="xIS-Vo-3JK"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="List" image="list" id="LcA-CB-z6x"/>
-                    <navigationItem key="navigationItem" id="jtM-SY-aSX">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="nnc-0G-4GC">
-                            <connections>
-                                <action selector="editOnButtonPressed:" destination="gsU-Di-Bvc" id="jE4-4d-bga"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="jtM-SY-aSX"/>
                     <connections>
                         <outlet property="segmentedControl" destination="Mon-oJ-CAZ" id="tj1-hB-8Yd"/>
                         <outlet property="tableView" destination="hnE-8m-zdM" id="5Vq-ml-ai5"/>

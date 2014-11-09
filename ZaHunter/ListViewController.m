@@ -131,7 +131,7 @@
 {
     MKLocalSearchRequest *request = [MKLocalSearchRequest new];
     request.naturalLanguageQuery = @"Pizzeria";
-    request.region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(0.4, 0.4));
+    request.region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(0.2, 0.2));
     MKLocalSearch *search = [[MKLocalSearch alloc]initWithRequest:request];
     [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error)
          {
@@ -242,8 +242,42 @@
         }
     }
 }
-- (IBAction)editOnButtonPressed:(UIBarButtonItem *)sender
+
+- (IBAction)editOnButtonPressed:(UIButton *)editButton
 {
+    self.tableView.editing = YES;
+}
+
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Confirmation"
+                                                                   message:@"Are you sure you would like to delete this item?"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+
+    UIAlertAction *delete = [UIAlertAction actionWithTitle:@"Delete"
+                                                     style:UIAlertActionStyleDefault
+                                                   handler:^(UIAlertAction *action)
+                             {
+                                 [self.listArray removeObjectAtIndex:indexPath.row];
+                                 [self.currentArray removeObjectAtIndex:indexPath.row];
+                                 [self.ETAArray removeObjectAtIndex:indexPath.row];
+                                 self.tableView.editing = NO;
+                                 [self.tableView reloadData];
+                                 [self directionOption:self.segmentedControl];
+                             }
+                             ];
+
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
+                                                     style:UIAlertActionStyleCancel
+                                                   handler:nil];
+
+    [alert addAction:delete];
+
+    [alert addAction:cancel];
+
+    [self presentViewController:alert animated:YES completion:nil];
+    [self.tableView reloadData];
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
