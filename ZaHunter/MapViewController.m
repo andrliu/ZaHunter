@@ -16,6 +16,7 @@
 @interface MapViewController () <CLLocationManagerDelegate,MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property MKPointAnnotation *userAnnotation;
+
 @end
 
 @implementation MapViewController
@@ -36,6 +37,7 @@
     {
         MKPointAnnotation *annotation = [MKPointAnnotation new];
         annotation.title = pizzria.mapItem.name;
+        annotation.subtitle = [NSString stringWithFormat: @"Rating: %d", pizzria.rating ];
         annotation.coordinate =  pizzria.mapItem.placemark.location.coordinate;
         [self.mapView addAnnotation:annotation];
     }
@@ -57,7 +59,23 @@
 
     if (![annotation isEqual:self.userAnnotation])
     {
-        pin.image = [UIImage imageNamed:@"pizzria"];
+        UIImage *templateImage = [[UIImage imageNamed:@"pizzria"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        UIImageView *imageView = [[UIImageView alloc]initWithImage:templateImage];
+        if ([annotation.subtitle containsString:@"4"] || [annotation.subtitle containsString:@"5"])
+        {
+            imageView.tintColor = [UIColor redColor];
+            pin.leftCalloutAccessoryView = imageView;
+        }
+        if ([annotation.subtitle containsString:@"3"])
+        {
+            imageView.tintColor = [UIColor blackColor];
+            pin.leftCalloutAccessoryView = imageView;
+        }
+        if ([annotation.subtitle containsString:@"1"] || [annotation.subtitle containsString:@"2"])
+        {
+            imageView.tintColor = [UIColor greenColor];
+            pin.leftCalloutAccessoryView = imageView;
+        }
     }
 
     return pin;

@@ -129,6 +129,7 @@
                     <tabBarItem key="tabBarItem" title="List" image="list" id="LcA-CB-z6x"/>
                     <navigationItem key="navigationItem" id="jtM-SY-aSX"/>
                     <connections>
+                        <outlet property="editButton" destination="nrb-gP-qoE" id="2Gc-vN-L6Z"/>
                         <outlet property="segmentedControl" destination="Mon-oJ-CAZ" id="tj1-hB-8Yd"/>
                         <outlet property="tableView" destination="hnE-8m-zdM" id="5Vq-ml-ai5"/>
                     </connections>

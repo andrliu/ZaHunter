@@ -13,5 +13,6 @@
 @property MKMapItem *mapItem;
 @property NSString *address;
 @property double distance;
+@property int rating;
 
 @end

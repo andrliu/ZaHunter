@@ -15,6 +15,7 @@
 @interface ListViewController () <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, UITabBarControllerDelegate>
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIButton *editButton;
 @property CLLocationManager *manager;
 @property NSMutableArray *currentArray;
 @property NSMutableArray *listArray;
@@ -62,7 +63,7 @@
 
     ALMapItem *destination = self.currentArray [indexPath.row];
 
-    cell.textLabel.text = destination.mapItem.name;
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ (Rating: %d)", destination.mapItem.name, destination.rating];
 
     double kilometers = destination.distance / 1000;
 
@@ -153,13 +154,14 @@
 
                     pizzria.distance = [mapItem.placemark.location distanceFromLocation: self.manager.location];
 
+                    pizzria.rating = arc4random_uniform(5) +1;
+
                     [self.listArray addObject:pizzria];
 
                 }
 
                 self.listArray = [[self.listArray sortedArrayUsingComparator:^NSComparisonResult(ALMapItem *obj1, ALMapItem *obj2)
                 {
-
                     if (obj1.distance < obj2.distance)
                     {
                         return (NSComparisonResult)NSOrderedAscending;
@@ -245,7 +247,16 @@
 
 - (IBAction)editOnButtonPressed:(UIButton *)editButton
 {
-    self.tableView.editing = YES;
+    if (self.tableView.editing == NO)
+    {
+        self.tableView.editing = YES;
+        [self.editButton setTitle:@"Done" forState:UIControlStateNormal];
+    }
+    else
+    {
+        self.tableView.editing = NO;
+        [self.editButton setTitle:@"Edit" forState:UIControlStateNormal];
+    }
 }
 
 
@@ -259,10 +270,18 @@
                                                      style:UIAlertActionStyleDefault
                                                    handler:^(UIAlertAction *action)
                              {
+
                                  [self.listArray removeObjectAtIndex:indexPath.row];
                                  [self.currentArray removeObjectAtIndex:indexPath.row];
                                  [self.ETAArray removeObjectAtIndex:indexPath.row];
+                                 [self.ETAArray removeLastObject];
                                  self.tableView.editing = NO;
+                                 if ([self.listArray[3] distance] < 10000 && self.currentArray.count <4 )
+                                 {
+                                     [self.currentArray addObject:self.listArray[3]];
+                                     [self.ETAArray addObject:[self.listArray[3] mapItem]];
+                                     [self.ETAArray addObject:[MKMapItem mapItemForCurrentLocation]];
+                                 }
                                  [self.tableView reloadData];
                                  [self directionOption:self.segmentedControl];
                              }
@@ -270,7 +289,10 @@
 
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
                                                      style:UIAlertActionStyleCancel
-                                                   handler:nil];
+                                                   handler:^(UIAlertAction *action)
+                             {
+                                 self.tableView.editing = NO;
+                             }];
 
     [alert addAction:delete];
 
