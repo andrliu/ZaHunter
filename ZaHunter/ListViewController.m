@@ -12,15 +12,17 @@
 @import CoreLocation;
 @import MapKit;
 
-@interface ListViewController () <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, UITabBarControllerDelegate>
+@interface ListViewController () <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, UITabBarControllerDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
+@property (weak, nonatomic) IBOutlet UITextField *textField;
 @property CLLocationManager *manager;
 @property NSMutableArray *currentArray;
 @property NSMutableArray *listArray;
 @property NSMutableArray *ETAArray;
 @property CLLocation *currentLocation;
+@property NSString *searchName;
 @property int totalETA;
 
 @end
@@ -33,6 +35,7 @@
     self.currentArray = [NSMutableArray array];
     self.listArray = [NSMutableArray array];
     self.ETAArray = [NSMutableArray array];
+    self.searchName = [NSString string];
 
 //MARK CLLocationManager start updating current location
     self.manager = [[CLLocationManager alloc]init];
@@ -43,7 +46,6 @@
 
     [self.tableView reloadData];
 }
-
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
@@ -121,18 +123,30 @@
              {
                  CLPlacemark *placemark = placemarks.firstObject;
                  self.currentLocation = placemark.location;
-                 [self findPizzeriaNear: placemark.location];
              }
          }
      ];
+}
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    self.currentArray = [NSMutableArray array];
+    self.listArray = [NSMutableArray array];
+    self.ETAArray = [NSMutableArray array];
+    self.totalETA = 0;
+    [self findPizzeriaNear: self.currentLocation];
+    [self.textField resignFirstResponder];
+    self.textField.text = @"";
+    return YES;
 }
 
 //MARK: find placemark locations based on current location
 - (void)findPizzeriaNear:(CLLocation *)location
 {
     MKLocalSearchRequest *request = [MKLocalSearchRequest new];
-    request.naturalLanguageQuery = @"Pizzeria";
-    request.region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(0.2, 0.2));
+    request.naturalLanguageQuery = self.textField.text;
+    request.region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(0.1, 0.1));
     MKLocalSearch *search = [[MKLocalSearch alloc]initWithRequest:request];
     [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error)
          {
@@ -273,8 +287,9 @@
 
                                  [self.listArray removeObjectAtIndex:indexPath.row];
                                  [self.currentArray removeObjectAtIndex:indexPath.row];
-                                 [self.ETAArray removeObjectAtIndex:indexPath.row];
+                                 [self.ETAArray removeObjectAtIndex:indexPath.row+1];
                                  [self.ETAArray removeLastObject];
+
                                  self.tableView.editing = NO;
                                  if ([self.listArray[3] distance] < 10000 && self.currentArray.count <4 )
                                  {
